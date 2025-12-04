@@ -1,5 +1,6 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler #transforms each feature to have mean = 0 and sd = 1 bc PCA and K-Means perform better on normalized data
+from sklearn.preprocessing import StandardScaler 
+#transforms each feature to have mean = 0 and sd = 1 bc PCA and K-Means perform better on normalized data
 import numpy as np
 
 INPUT_FILE = "results/cleaned.csv"

@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
-from sklearn.decomposition import PCA #contains algorithm for dimensionality reduction (high dimen)
+from sklearn.decomposition import PCA 
+#contains algorithm for dimensionality reduction 
+#(high dimensional data -> fewer dimensions while keeping as much info as possible)
 
 INPUT_X = "results/X_scaled.npy" #normalized numeric matrix for PCA
 INPUT_DF = "results/cleaned_with_index.csv" #metadata and features matched to rows in PCA
