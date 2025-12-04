@@ -1,22 +1,23 @@
 import pandas as pd
 
-INPUT_FILE = "data/tracks_features.csv"      # change if needed
-OUTPUT_FILE = "results/cleaned.csv"
+INPUT_FILE = "data/tracks_features.csv" #data file given
+OUTPUT_FILE = "results/cleaned.csv" #cleaned data file
 
-# Load dataset
+#loads the dataset
 df = pd.read_csv(INPUT_FILE)
 
-# Keep only needed audio feature columns
+# keeps only needed audio feature columns for PCA and clustering
 feature_cols = [
     "danceability", "energy", "loudness", "speechiness",
     "acousticness", "instrumentalness", "liveness", "valence",
     "tempo", "duration_ms"
 ]
 
-# Drop rows with missing feature values
+# removes any rows with missing feature values
+# reason: PCA and KMeans cannot handle missing values
 df_clean = df.dropna(subset=feature_cols)
 
-# Save cleaned dataset
+# saves and stores the cleaned dataset so later script can use it
 df_clean.to_csv(OUTPUT_FILE, index=False)
 
 print("Step 1 done → saved cleaned dataset:", OUTPUT_FILE)
