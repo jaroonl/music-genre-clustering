@@ -12,7 +12,7 @@ The final goal: identify natural music “genre-like” groupings using PCA, K-M
 - Selects the audio feature columns required for the project.
 - Drops rows with missing values.
 - Saves a cleaned CSV into:  
-  ➤ `results/cleaned.csv`
+  → `results/cleaned.csv`
 
 ### **Step 2 — Normalize (`src/normalize.py`)**
 - Loads the cleaned file.
@@ -28,28 +28,21 @@ The final goal: identify natural music “genre-like” groupings using PCA, K-M
 - Saves PCA-reduced matrix → `results/X_pca.npy`  
 - Saves DataFrame aligned with PCA data → `results/pca_ready.csv`
 
----
-
-## Steps Remaining
-
-### **Step 4 — K-Means Clustering**
+### **Step 4 — K-Means Clustering** (`src/kmeans.py`)
 - Load `results/X_pca.npy`
-- Use Elbow & Silhouette methods to pick K
+- Use Elbow & Silhouette methods to pick K → `results/elbowMethod.png` `results/silhouetteScore.png` `results/combinedGraph.png`
 - Fit KMeans
-- Save cluster labels and optionally append to `pca_ready.csv`
+- Save cluster labels for visualization → `results/kmeans_labels.npy`
 
-### **Step 5 — UMAP 2D Visualization**
+### **Step 5 — UMAP 2D Visualization** (`src/visualization.py`)
 - Load PCA matrix and cluster labels
 - Run UMAP to reduce to 2D
-- Plot clusters using Plotly or Matplotlib
+- Plot clusters using Plotly → `results/umap_2d.npy` 
 - Produce visuals for final report
 
 ### **Step 6 — Cluster Interpretation**
 - Compute mean feature values per cluster
-- Interpret clusters (e.g., “high energy + high tempo → EDM-type cluster")
-- Add sample songs per cluster
-- Produce final write-up / report
-
+- Interpret clusters (listed on submitted PDF)
 ---
 
 ## 📁 Repository Structure
