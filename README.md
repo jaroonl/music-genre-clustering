@@ -43,7 +43,5 @@ The final goal: identify natural music “genre-like” groupings using PCA, K-M
 ### **Step 6 — Cluster Interpretation**
 - Compute mean feature values per cluster
 - Interpret clusters (listed on submitted PDF)
----
 
-## 📁 Repository Structure
 
